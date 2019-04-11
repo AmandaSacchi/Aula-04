@@ -1,0 +1,51 @@
+*{ /*tudo que eu colocar aqui vai ser aplicado em todos os elementos*/  
+
+}
+body{
+    margin: 0;
+}
+nav{
+    background-color: black;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 18pt;
+}
+nav span{
+    color:darkcyan;
+}
+#menuHamburguer{
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 25px;
+    width: 30px;
+    
+}
+.trace {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 40px;
+}
+@media (max-width:768px){ /*BREAKPOINT: Estipula o que acontecerá se a largura do site ficar menor que isso*/
+    nav a{
+        display: none;
+    }
+    #menuHamburguer{
+        display: flex;
+    }
+}
+@media (max-width:450px){  /* mais um breakpoint */
+nav{
+    justify-content: flex-start; /* trazer navbar para a esquerda */
+}
+#menuHamburguer{
+    margin-left: 5%;
+}
+}
