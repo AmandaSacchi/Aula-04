@@ -1,12 +1,17 @@
-*{ /*tudo que eu colocar aqui vai ser aplicado em todos os elementos*/  
-
-}
+*{ /*tudo que eu colocar aqui vai ser aplicado em todos os elementos*/}
 body{
     margin: 0;
+    display: grid;
+    grid-template-areas: 'nav nav nav nav'
+                         'section section aside aside'
+                         'footer footer footer footer';
+    grid-template-rows: 12vh 75vh 75vh 13vh; 
+    grid-gap: 2px;
+    background-color: white;
 }
 nav{
+    grid-area: nav; /*chamar a configuração de grid*/
     background-color: black;
-    height: 50px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -15,9 +20,6 @@ nav a{
     color: white;
     text-decoration: none;
     font-size: 18pt;
-}
-nav span{
-    color:darkcyan;
 }
 #menuHamburguer{
     display: none;
@@ -33,6 +35,43 @@ nav span{
     background-color: white;
     border-radius: 40px;
 }
+section{
+    grid-area: section;
+    background-color: rgb(19, 18, 18);
+    color: white;
+    align-items: center;
+    flex-direction: column; /*deixar os itens em coluna*/
+    justify-content: center;
+}
+section img{
+   /* z-index: 1000;  a imagem vai pra frente de tudo*/
+}
+aside{
+    grid-area: aside;
+    background-color: rgb(36, 35, 35);
+}
+footer{
+    grid-area: footer;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    
+}
+#interaçoes{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+#redesocial{
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+/*TABLET*/
 @media (max-width:768px){ /*BREAKPOINT: Estipula o que acontecerá se a largura do site ficar menor que isso*/
     nav a{
         display: none;
@@ -40,12 +79,33 @@ nav span{
     #menuHamburguer{
         display: flex;
     }
+   body{
+    grid-template-areas: 
+    'nav nav nav'
+    'section section section'
+    'aside aside aside'
+    'footer footer footer';
+    grid-template-rows: 10vh 30vh 40vh 20vh; 
+    background-color: purple;
+    grid-gap: 3px;
+   } 
 }
-@media (max-width:450px){  /* mais um breakpoint */
+/*CELULAR*/
+@media (max-width:435px){  /* mais um breakpoint */
 nav{
     justify-content: flex-start; /* trazer navbar para a esquerda */
 }
 #menuHamburguer{
     margin-left: 5%;
+}
+body{
+    grid-template-areas:
+    'nav'
+    'section'
+    'aside'
+    'footer';
+    grid-template-rows: 10vh 70vh 80vh 30vh;
+    background-color: red;
+
 }
 }
